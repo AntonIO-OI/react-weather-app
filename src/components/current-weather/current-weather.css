@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 .weather {
-  max-width: 800px;
+  max-width: 850px;
   height: 350px;
   display: flex;
   justify-content: space-around;
@@ -15,7 +15,7 @@
 
 .left-info {
   position: relative;
-  width: 260px;
+  width: 310px;
   height: 100%;
   float: left;
   display: flex;
@@ -36,7 +36,11 @@
 }
 
 .weather-icon {
-  width: 80px;
+  width: 75px;
+}
+
+.forecast-icon {
+  width: 32px;
 }
 
 .pic-gradient {

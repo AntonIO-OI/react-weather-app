@@ -12,11 +12,11 @@ function App() {
     const [latitude, longitude] = searchData.value.split(" ");
 
     const currentWeatherFetch = fetch(
-      `${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}`
+      `${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`
     );
 
     const forecastFetch = fetch(
-      `${WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}`
+      `${WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`
     );
 
     Promise.all([currentWeatherFetch, forecastFetch])
@@ -24,8 +24,60 @@ function App() {
         const weatherResponse = await response[0].json();
         const forecastResponse = await response[1].json();
 
-        setCurrentWeather({ city: searchData.label, ...weatherResponse });
-        setForecast({ city: searchData.label, ...forecastResponse });
+        // Create a new Date object for the current date
+        const currentDate = new Date();
+
+        // Define arrays for the day names and month names
+        const dayNames = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+
+        // Get the day of the week (0-6) and month (0-11) from the Date object
+        const dayOfWeek = currentDate.getDay();
+        const month = currentDate.getMonth();
+
+        // Format the date and day strings
+        const formattedDate = `${currentDate
+          .getDate()
+          .toString()
+          .padStart(2, "0")} ${monthNames[month]} ${currentDate.getFullYear()}`;
+        const formattedDay = dayNames[dayOfWeek];
+
+        const days = dayNames
+          .slice(dayOfWeek, dayNames.length)
+          .concat(dayNames.slice(0, dayOfWeek));
+
+        setCurrentWeather({
+          city: searchData.label,
+          date: formattedDate,
+          day: formattedDay,
+          ...weatherResponse,
+        });
+        setForecast({
+          city: searchData.label,
+          days: days,
+          ...forecastResponse,
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -36,7 +88,9 @@ function App() {
   return (
     <div className="container">
       <Search onSearchChange={handleOnSearchCahnge} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
+      {currentWeather && (
+        <CurrentWeather data={currentWeather} forecast={forecast} />
+      )}
     </div>
   );
 }
