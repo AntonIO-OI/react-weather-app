@@ -1,6 +1,6 @@
 import "./current-weather.css";
 
-const CurrentWeather = () => {
+const CurrentWeather = ({ data }) => {
   return (
     <div className="weather">
       <div className="left-info">
@@ -10,21 +10,26 @@ const CurrentWeather = () => {
           <span>03 August 2023</span>
           <div>
             <i className="bx bx-current-location"></i>
-            <span>Kyiv, UA</span>
+            <span>{data.city}</span>
           </div>
         </div>
         <div className="today-weather">
-          <i className="bx bx-sun"></i>
+          <img
+            alt="weather-icon"
+            className="weather-icon"
+            src={`icons/${data.weather[0].icon}.svg`}
+          />
+          {/* <i className="bx bx-sun"></i> */}
           <h1 className="weather-temp">25°C</h1>
-          <h3>Sunny</h3>
+          <h3>{data.weather[0].description}</h3>
         </div>
       </div>
 
       <div className="right-info">
         <div className="day-info">
           <div>
-            <span className="title">PRECIPITATION</span>
-            <span className="value">4 %</span>
+            <span className="title">FEELS LIKE</span>
+            <span className="value">24°C</span>
           </div>
           <div>
             <span className="title">HUMIDITY</span>
@@ -33,6 +38,10 @@ const CurrentWeather = () => {
           <div>
             <span className="title">WIND SPEED</span>
             <span className="value">6 km/h</span>
+          </div>
+          <div>
+            <span className="title">PRESSURE</span>
+            <span className="value">15 hPa</span>
           </div>
         </div>
 
@@ -73,10 +82,6 @@ const CurrentWeather = () => {
             <span className="day-temp">14°C</span>
           </li>
         </ul>
-
-        <div className="btn-container">
-          <button className="loc-button">Search Location</button>
-        </div>
       </div>
     </div>
   );

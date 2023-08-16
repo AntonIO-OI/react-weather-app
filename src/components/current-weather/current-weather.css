@@ -2,7 +2,9 @@
 
 .weather {
   max-width: 800px;
-  height: 400px;
+  height: 350px;
+  display: flex;
+  justify-content: space-around;
   background-color: #232931;
   color: #fff;
   border-radius: 25px;
@@ -33,6 +35,10 @@
   transform: scale(1.1) perspective(2500px) rotateY(5deg);
 }
 
+.weather-icon {
+  width: 80px;
+}
+
 .pic-gradient {
   position: absolute;
   width: 100%;
@@ -56,7 +62,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  bottom: 20px;
+  bottom: 10px;
   left: 20px;
 }
 
@@ -65,15 +71,18 @@
 }
 
 .weather-temp {
+  margin: 0;
   font-weight: 700;
   font-size: 3.5rem;
 }
 
 .right-info {
-  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
   position: relative;
   height: 100%;
-  padding-top: 25px;
 }
 
 .day-info {
@@ -109,6 +118,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 5px;
   align-items: center;
   border-radius: 10px;
   transition: all 0.3s ease;
