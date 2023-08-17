@@ -55,15 +55,13 @@ const CurrentWeather = ({ data, forecast }) => {
               <img
                 alt="forecast-icon"
                 className="forecast-icon"
-                src={`icons/${forecast.list[idx].weather[0].icon}.svg`}
+                src={`icons/${item.weather[0].icon}.svg`}
               />
               <span>
                 {forecast.days[idx].substring(0, 1).toUpperCase() +
                   forecast.days[idx].substring(1, 3)}
               </span>
-              <span className="day-temp">
-                {Math.round(forecast.list[idx].main.temp)}°C
-              </span>
+              <span className="day-temp">{Math.round(item.main.temp)}°C</span>
             </li>
           ))}
         </ul>

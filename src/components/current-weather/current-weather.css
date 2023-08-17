@@ -58,6 +58,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
+  gap: 5px;
   margin-top: 25px;
 }
 
@@ -165,4 +166,67 @@
 
 .loc-button:hover {
   background: #1a237e;
+}
+
+@media (max-width: 997px) {
+  .weather {
+    flex-direction: column;
+    width: 550px;
+    height: 700px;
+    margin: 40px auto 0;
+  }
+
+  .left-info {
+    width: 100%;
+    transform: none;
+  }
+
+  .today-info > h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+
+  .today-info > span {
+    font-size: 1.3rem;
+  }
+
+  .today-info > div > span {
+    font-size: 1.05rem;
+  }
+
+  .right-info {
+    height: 90%;
+    gap: 0;
+  }
+}
+
+@media (max-width: 676px) {
+  .weather {
+    width: 90%;
+  }
+
+  .days-list {
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  .days-list > li {
+    padding: 7px;
+  }
+}
+
+@media (max-width: 520px) {
+  .weather {
+    width: 100%;
+  }
+
+  .today-info {
+    margin-top: 15px;
+  }
+
+  .days-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
 }
