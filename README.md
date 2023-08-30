@@ -33,7 +33,7 @@ yarn install
 ```
 
 4. Obtain API Keys:
-* Register on the GeoDB Cities API (https://geodb-cities-api.wirefreethought.com/) to get your GeoDB API key.
+* Register on the GeoDB Cities API (https://rapidapi.com/wirefreethought/api/geodb-cities) to get your GeoDB API key.
 * Sign up on the OpenWeather API (https://openweathermap.org/) to obtain your OpenWeather API key.
 
 5. Create a api.js file in the project root and add your API keys:
