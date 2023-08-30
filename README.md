@@ -63,16 +63,16 @@ yarn start
 
 
 ## Screenshots
-### PC or Laptop Screen:
+## PC or Laptop Screen:
 ![image](https://github.com/AntonIO-OI/react-weather-app/assets/82289302/be436285-5852-49e8-a93f-e2ab3ce62445)
 
-### Tablet Screen:
+## Tablet Screen:
 ![image](https://github.com/AntonIO-OI/react-weather-app/assets/82289302/5f86cd37-600b-4bc1-971f-03777a2ff1d9)
 
-### Mobile L Screen:
+## Mobile L Screen:
 ![image](https://github.com/AntonIO-OI/react-weather-app/assets/82289302/b0546aa5-5798-4d06-ad04-bca0061bd165)
 
-### Mobile M Screen:
+## Mobile M Screen:
 ![image](https://github.com/AntonIO-OI/react-weather-app/assets/82289302/5adec72c-9153-46a1-90e1-50c7ba2f016b)
 
 ## License
