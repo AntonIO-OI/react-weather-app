@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# React Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the React Weather App! This is a web application that provides real-time weather information for cities around the world. The app utilizes two APIs: GeoDB Cities API to fetch city data and OpenWeather API to retrieve weather information.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Search for weather information of cities worldwide.
+- Display current weather conditions including temperature, humidity, and weather description.
+- Responsive design for optimal user experience on different devices.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React: A JavaScript library for building user interfaces.
+- HTML and CSS: For structuring and styling the app.
+- GeoDB Cities API: Provides city data and location information.
+- OpenWeather API: Retrieves real-time weather data.
+- Axios: A promise-based HTTP client for making API requests.
+- Responsive Design: CSS media queries for ensuring the app works well on various screen sizes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository:
+```git clone https://github.com/your-username/react-weather-app.git```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate to the project directory:
+```cd react-weather-app```
 
-### `npm run build`
+3. Install dependencies using npm or yarn:
+```
+npm install
+# or
+yarn install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Obtain API Keys:
+* Register on the GeoDB Cities API (https://geodb-cities-api.wirefreethought.com/) to get your GeoDB API key.
+* Sign up on the OpenWeather API (https://openweathermap.org/) to obtain your OpenWeather API key.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Create a api.js file in the project root and add your API keys:
+```
+export const geoApiOptions = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "you_key",
+    "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
+  },
+};
+export const GEO_API_URL =
+  "https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions";
+export const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5/";
+export const WEATHER_API_KEY = "your_key";
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. Start the development server:
+```
+npm start
+# or
+yarn start
+```
 
-### `npm run eject`
+7. Open your browser and go to http://localhost:3000 to use the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
+This project is licensed under the MIT License.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+The app design and functionality were inspired by the need for a simple and clean weather application.
+Thanks to GeoDB Cities API and OpenWeather API for providing the necessary data for this project.
+Special thanks to the React community for the extensive resources and tutorials.
